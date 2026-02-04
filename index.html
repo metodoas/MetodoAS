@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método ♠️ AS - La Ventaja Estratégica</title>
+    <meta name="description"
+        content="Domina tu productividad y estrategia con el Método AS. Análisis, Estrategia y Acción.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-red: #D90429;
+            --accent-red-hover: #EF233C;
+            --border-color: #333333;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Utilidades */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #999);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-red {
+            color: var(--accent-red);
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 4rem;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--accent-red);
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 4, 41, 0.2);
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        /* Hero */
+        section {
+            padding: 5rem 0;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 8rem;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #1a0104 0%, var(--bg-color) 70%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            /* animation: float 6s ease-in-out infinite; */
+            filter: grayscale(20%) contrast(110%);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Story */
+        .story {
+            background-color: #080808;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .highlight {
+            border-left: 3px solid var(--accent-red);
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: #fff;
+        }
+
+        /* Problem */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-red);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-red);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+        }
+
+        /* Method - Triangle CSS */
+        .method-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin: 4rem 0;
+        }
+
+        .triangle-container {
+            position: relative;
+            width: 300px;
+            height: 260px;
+        }
+
+        .triangle-bg {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 260px solid #111;
+            z-index: 1;
+        }
+
+        .method-point {
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            width: 120px;
+        }
+
+        .mp-1 {
+            top: -20px;
+            left: 90px;
+        }
+
+        /* Top */
+        .mp-2 {
+            bottom: -10px;
+            left: -40px;
+        }
+
+        /* Bottom Left */
+        .mp-3 {
+            bottom: -10px;
+            right: -40px;
+        }
+
+        /* Bottom Right */
+
+        .mp-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--accent-red);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .mp-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .ace-center {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            z-index: 3;
+            color: #222;
+        }
+
+        /* What's Included */
+        .check-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-list li::before {
+            content: "♠";
+            color: var(--accent-red);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+
+        /* Offer */
+        .offer-box {
+            background: linear-gradient(145deg, #111, #0a0a0a);
+            border: 1px solid var(--border-color);
+            padding: 4rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+        }
+
+        .guarantee {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border: 1px dashed #333;
+            padding: 1rem;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid #111;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding-top: 5rem;
+            }
+
+            .method-diagram {
+                margin-top: 6rem;
+                margin-bottom: 6rem;
+                transform: scale(0.9);
+            }
+
+            .offer-box {
+                padding: 2rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            header .container {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">MÉTODO <span class="text-red">♠️</span> AS</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Recupera el control de <span class="text-red">tu tiempo</span>.</h1>
+                    <p>Sin trucos de "productividad extrema". Solo un sistema claro para analizar, decidir y terminar lo
+                        que empiezas.</p>
+                    <a href="#oferta" class="btn">Conocer el Método - 9€</a>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Descarga inmediata en PDF</p>
+                </div>
+                <div class="hero-image">
+                    <!-- Cover Image with Hover Effect -->
+                    <div class="book-container">
+                        <img src="img/libroAS.jpg" alt="Método AS - Portada" class="book-image">
+                    </div>
+                    <style>
+                        .book-container {
+                            perspective: 1000px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 500px;
+                            /* Adjust based on image aspect ratio */
+                        }
+
+                        .book-image {
+                            max-width: 100%;
+                            height: auto;
+                            max-height: 450px;
+                            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+                            /* Initial state */
+                            transform: translateY(0) scale(1);
+                            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+                        }
+
+                        /* Hover Animation - Levitate & Glow */
+                        .book-image:hover {
+                            transform: translateY(-15px) scale(1.02);
+                            filter: drop-shadow(0 40px 50px rgba(217, 4, 41, 0.3));
+                            /* Red glow matching branding */
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story">
+        <div class="container">
+            <div class="story-content text-center">
+                <h2 class="mb-2">No es "magia". Es orden.</h2>
+                <p>Hace unos años, trabajaba muchas horas pero sentía que avanzaba muy poco. Terminaba el día cansado y
+                    con la sensación de tener mil frentes abiertos.</p>
+                <div class="highlight">
+                    <p>"Me di cuenta de que el problema no era cuánto me esforzaba, sino cómo decidía qué hacer y qué
+                        ignorar."</p>
+                </div>
+                <p>El <strong>Método AS</strong> es simplemente la estructura que desarrollé para salir de ese bucle.
+                    Para dejar de dudar y cerrar tareas con decisión.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="problema">
+        <div class="container">
+            <h2 class="text-center mb-4">¿Te pasa esto?</h2>
+            <div class="problem-grid">
+                <div class="card">
+                    <div class="card-icon">↻</div>
+                    <h3>Saltar entre tareas</h3>
+                    <p>Intentas hacer varias cosas a la vez y al final no terminas bien ninguna.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚠</div>
+                    <h3>Pensarlo demasiado</h3>
+                    <p>Tienes tantas opciones que te bloqueas antes de empezar a trabajar.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>No desconectar</h3>
+                    <p>Sigues dándole vueltas a los problemas del trabajo incluso cuando estás descansando.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodo">
+        <div class="container">
+            <h2 class="text-center mb-4">La Estrategia <span class="text-red">AS</span></h2>
+            <p class="text-center mb-4 text-muted">Tres pasos para poner orden en el caos.</p>
+
+            <div class="method-diagram">
+                <div class="triangle-container">
+                    <div class="triangle-bg"></div>
+                    <div class="ace-center">♠</div>
+
+                    <div class="method-point mp-1">
+                        <span class="mp-title">ANÁLISIS</span>
+                        <span class="mp-desc">Entender dónde estás.</span>
+                    </div>
+                    <div class="method-point mp-2">
+                        <span class="mp-title">ESTRATEGIA</span>
+                        <span class="mp-desc">Decidir el camino.</span>
+                    </div>
+                    <div class="method-point mp-3">
+                        <span class="mp-title">ACCIÓN</span>
+                        <span class="mp-desc">Ejecutar y terminar.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="incluye">
+        <div class="container text-center">
+            <h2 class="mb-4">¿Qué incluye?</h2>
+            <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <ul class="check-list">
+                    <li><strong>El eBook "Método AS" (PDF):</strong> Una guía directa y práctica, sin relleno.</li>
+                    <li><strong>Plantilla de Decisión:</strong> Un esquema simple para destrabarte cuando dudas.
+                    </li>
+                    <li><strong>Audio "Reset Mental":</strong> 5 minutos para recuperar la calma antes de trabajar.</li>
+                    <li><strong>Actualizaciones futuras</strong> incluidas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" style="padding-bottom: 8rem;">
+        <div class="container text-center">
+            <div class="offer-box">
+                <h2 class="mb-2">Empieza a organizarte mejor.</h2>
+                <!-- <div class="old-price">Antes 29€</div> -->
+                <div class="price">9€</div>
+                <p class="mb-2 text-muted">Pago único. Tuyo para siempre.</p>
+
+                <a href="#" class="btn" style="min-width: 250px;">DESCARGAR AHORA</a>
+
+                <div class="guarantee">
+                    <strong>Garantía personal</strong><br>
+                    Si el método no te ayuda a ordenarte en 14 días, escríbeme y te devuelvo el dinero.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>© 2026 Andrés Sebastián Rios Ponce. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                <a href="#">Aviso Legal</a> | <a href="#">Privacidad</a> | <a href="#">Cookies</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
