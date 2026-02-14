@@ -82,39 +82,175 @@
 
         /* Botones */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 3.5rem;
+            /* Fixed height for stability */
             background-color: var(--accent-red);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 0 2.5rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-radius: 4px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
             border: 1px solid var(--accent-red);
             font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
         }
 
         .btn:hover {
             background-color: var(--accent-red-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(217, 4, 41, 0.2);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 20px rgba(217, 4, 41, 0.5), 0 0 40px rgba(217, 4, 41, 0.2);
+            border-color: #ff3b5c;
         }
 
-        /* Header */
-        header {
-            padding: 2rem 0;
+        .btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 5px 10px rgba(217, 4, 41, 0.3);
+        }
+
+        /* Rolling Text Structure - Ensuring it works */
+        .btn-text-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 1.2em;
+            line-height: 1.2em;
+            display: block;
+        }
+
+        .btn-text-wrapper span {
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .btn-text-original {
+            transform: translateY(0);
+        }
+
+        .btn-text-clone {
             position: absolute;
-            width: 100%;
             top: 0;
-            z-index: 10;
+            left: 0;
+            width: 100%;
+            transform: translateY(100%);
+        }
+
+        .btn:hover .btn-text-original {
+            transform: translateY(-100%);
+        }
+
+        .btn:hover .btn-text-clone {
+            transform: translateY(0);
+        }
+
+        /* Shine Effect */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        /* Header - Premium "Cornice" Style */
+        header {
+            padding: 1rem 0;
+            position: fixed;
+            /* Sticky/Fixed "Crown" */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.85);
+            /* Dark Glass */
+            backdrop-filter: blur(12px);
+            /* Blur effect */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 3px solid var(--accent-red);
+            /* Top Accent Line */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Header Button (Small CTA) */
+        .header-btn {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid var(--accent-red);
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .header-btn:hover {
+            background-color: var(--accent-red);
+            color: #fff;
+            /* Stronger Neon Glow */
+            box-shadow: 0 0 20px rgba(217, 4, 41, 0.6), 0 0 40px rgba(217, 4, 41, 0.3);
+            transform: translateY(-2px);
+            border-color: #ff3b5c;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
         .logo {
             font-weight: 800;
             font-size: 1.5rem;
             letter-spacing: -1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-text {
+            color: #fff;
+            /* Static white, no animation */
+        }
+
+        .logo-spade {
+            /* Black (dark grey) to Red shine */
+            background: linear-gradient(to right, #222 0%, #222 40%, #ff3b5c 50%, #222 60%, #222 100%);
+            background-size: 200% auto;
+            color: #222;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.25em;
+            animation: shine-move 3s linear infinite;
+        }
+
+        @keyframes shine-move {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
         }
 
         /* Hero */
@@ -255,6 +391,13 @@
             position: relative;
             width: 300px;
             height: 260px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        /* Interactive scaling on hover */
+        .triangle-container:hover {
+            transform: scale(1.05);
         }
 
         .triangle-bg {
@@ -265,6 +408,27 @@
             border-right: 150px solid transparent;
             border-bottom: 260px solid #111;
             z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        @keyframes neon-triangle-pulse {
+            0% {
+                filter: drop-shadow(0 0 5px rgba(217, 4, 41, 0.5));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px rgba(217, 4, 41, 0.8)) drop-shadow(0 0 40px rgba(217, 4, 41, 0.4));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 5px rgba(217, 4, 41, 0.5));
+            }
+        }
+
+        .triangle-container:hover .triangle-bg {
+            border-bottom-color: #1a0505;
+            /* Red tint */
+            animation: neon-triangle-pulse 2s infinite;
         }
 
         .method-point {
@@ -272,6 +436,11 @@
             z-index: 2;
             text-align: center;
             width: 120px;
+            transition: transform 0.4s ease;
+        }
+
+        .triangle-container:hover .method-point {
+            transform: scale(1.1);
         }
 
         .mp-1 {
@@ -299,11 +468,21 @@
             color: var(--accent-red);
             display: block;
             margin-bottom: 0.5rem;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .triangle-container:hover .mp-title {
+            text-shadow: 0 0 10px rgba(217, 4, 41, 0.6);
         }
 
         .mp-desc {
             font-size: 0.9rem;
             color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        .triangle-container:hover .mp-desc {
+            color: #fff;
         }
 
         .ace-center {
@@ -314,6 +493,13 @@
             font-size: 4rem;
             z-index: 3;
             color: #222;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .triangle-container:hover .ace-center {
+            color: var(--accent-red);
+            filter: drop-shadow(0 0 15px rgba(217, 4, 41, 0.8));
+            transform: translate(-50%, -50%) scale(1.3);
         }
 
         /* What's Included */
@@ -416,7 +602,27 @@
 
             header .container {
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
+            }
+        }
+
+        /* Blinking Cursor for Hero */
+        .blinking-cursor {
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
+            font-weight: 800;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
             }
         }
     </style>
@@ -426,7 +632,13 @@
 
     <header>
         <div class="container">
-            <div class="logo">MÉTODO <span class="text-red">♠️</span> AS</div>
+            <div class="logo">
+                <span class="logo-text">MÉTODO</span>
+                <span class="logo-spade">♠️</span>
+                <span class="logo-text">AS</span>
+            </div>
+            <!-- New Header CTA -->
+            <a href="#oferta" class="header-btn">ACCEDER</a>
         </div>
     </header>
 
@@ -434,10 +646,16 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Recupera el control de <span class="text-red">tu tiempo</span>.</h1>
+                    <h1>Recupera el control de <span class="text-red">tu tiempo<span
+                                class="blinking-cursor">_</span></span></h1>
                     <p>Sin trucos de "productividad extrema". Solo un sistema claro para analizar, decidir y terminar lo
                         que empiezas.</p>
-                    <a href="#oferta" class="btn">Conocer el Método - 9€</a>
+                    <a href="#oferta" class="btn magnetic-btn">
+                        <div class="btn-text-wrapper">
+                            <span class="btn-text-original">QUIERO ORGANIZARME</span>
+                            <span class="btn-text-clone">QUIERO ORGANIZARME</span>
+                        </div>
+                    </a>
                     <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Descarga inmediata en PDF</p>
                 </div>
                 <div class="hero-image">
@@ -480,14 +698,14 @@
     <section class="story">
         <div class="container">
             <div class="story-content text-center">
-                <h2 class="mb-2">No es "magia". Es orden.</h2>
+                <h2 class="mb-2">No es magia. Es sentido común aplicado.</h2>
                 <p>Hace unos años, trabajaba muchas horas pero sentía que avanzaba muy poco. Terminaba el día cansado y
                     con la sensación de tener mil frentes abiertos.</p>
                 <div class="highlight">
                     <p>"Me di cuenta de que el problema no era cuánto me esforzaba, sino cómo decidía qué hacer y qué
                         ignorar."</p>
                 </div>
-                <p>El <strong>Método AS</strong> es simplemente la estructura que desarrollé para salir de ese bucle.
+                <p>El <strong>Método AS</strong> es la estructura que uso para salir de ese bucle.
                     Para dejar de dudar y cerrar tareas con decisión.</p>
             </div>
         </div>
@@ -495,7 +713,7 @@
 
     <section id="problema">
         <div class="container">
-            <h2 class="text-center mb-4">¿Te pasa esto?</h2>
+            <h2 class="text-center mb-4">¿Te suena esto?</h2>
             <div class="problem-grid">
                 <div class="card">
                     <div class="card-icon">↻</div>
@@ -558,15 +776,49 @@
         </div>
     </section>
 
+    <section id="beneficios"
+        style="background-color: #080808; border-top: 1px solid #111; border-bottom: 1px solid #111;">
+        <div class="container text-center">
+            <h2 class="mb-4">No es solo productividad. <span class="text-red">Es paz mental.</span></h2>
+            <div class="benefit-grid benefit-container">
+                <style>
+                    .benefit-container {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 2rem;
+                        max-width: 900px;
+                        margin: 0 auto;
+                        text-align: left;
+                    }
+                </style>
+                <div class="benefit-item">
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">🛑 Dejar de Apagar Fuegos</h3>
+                    <p style="color: #a0a0a0; font-size: 1rem;">Pasarás de reaccionar a lo urgente a trabajar en lo
+                        importante. Sin estrés innecesario.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">🎯 Foco Láser</h3>
+                    <p style="color: #a0a0a0; font-size: 1rem;">Sabrás exactamente qué hacer al sentarte. Cero dudas.
+                        Cero procrastinación por bloqueo.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">🛌 Desconexión Real</h3>
+                    <p style="color: #a0a0a0; font-size: 1rem;">Cerrarás el portátil sabiendo que cumpliste. Disfruta
+                        de tu tiempo libre sin culpa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="oferta" style="padding-bottom: 8rem;">
         <div class="container text-center">
             <div class="offer-box">
-                <h2 class="mb-2">Empieza a organizarte mejor.</h2>
+                <h2 class="mb-2">Empieza hoy mismo.</h2>
                 <!-- <div class="old-price">Antes 29€</div> -->
                 <div class="price">9€</div>
                 <p class="mb-2 text-muted">Pago único. Tuyo para siempre.</p>
 
-                <a href="#" class="btn" style="min-width: 250px;">DESCARGAR AHORA</a>
+                <a href="#" class="btn" style="min-width: 250px;">ACCESO INMEDIATO (9€)</a>
 
                 <div class="guarantee">
                     <strong>Garantía personal</strong><br>
