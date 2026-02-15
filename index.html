@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método ♠️ AS - La Ventaja Estratégica</title>
+    <title>Método AS – Reset de 21 Días para Emprendedores Dispersos</title>
     <meta name="description"
         content="Domina tu productividad y estrategia con el Método AS. Análisis, Estrategia y Acción.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -384,7 +384,8 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin: 4rem 0;
+            margin: 6rem 0 4rem 0;
+            /* Increased top margin to lower the pyramid */
         }
 
         .triangle-container {
@@ -443,8 +444,64 @@
             transform: scale(1.1);
         }
 
+        /* Animated Strategy Icons */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px) scale(0.5);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(-10px) scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes float-icon {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .point-icon {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+            /* Pointer events none to prevent flickering if cursor moves exactly over icon which might be outside hover area */
+            pointer-events: none;
+        }
+
+        .point-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #ffffff;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Hover effects now handled by JS for smooth transition */
+
+        /* Adjust positions */
         .mp-1 {
-            top: -20px;
+            top: -10px;
             left: 90px;
         }
 
@@ -570,6 +627,42 @@
             font-size: 0.9rem;
         }
 
+        /* Cinematic Gradient Text Reveal */
+        .glowing-text {
+            /* Wider shine for better effect */
+            background: linear-gradient(90deg, #fff 40%, #D90429 50%, #fff 60%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            animation: shine 3s linear infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: -100% center;
+            }
+        }
+
+        /* Benefit Icons */
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            stroke: var(--accent-red);
+            stroke-width: 1.5;
+            fill: none;
+            filter: drop-shadow(0 0 5px rgba(217, 4, 41, 0.3));
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-content {
@@ -587,9 +680,24 @@
             }
 
             .method-diagram {
-                margin-top: 6rem;
-                margin-bottom: 6rem;
-                transform: scale(0.9);
+                margin-top: 5rem;
+                /* More space for the top icon/text */
+                margin-bottom: 5rem;
+                transform: scale(0.75);
+                /* Smaller scale for mobile to avoid overflow */
+                width: 100%;
+                /* Ensure container doesn't overflow */
+            }
+
+            .triangle-container {
+                /* Center explicitly on mobile */
+                margin: 0 auto;
+            }
+
+            /* Adjust icons position on mobile if needed, or keep default */
+            .point-icon {
+                font-size: 3rem;
+                /* Larger touch targets */
             }
 
             .offer-box {
@@ -625,6 +733,18 @@
                 opacity: 0;
             }
         }
+
+        /* Footer Links */
+        .footer-link {
+            color: #666;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-red);
+        }
     </style>
 </head>
 
@@ -650,7 +770,7 @@
                                 class="blinking-cursor">_</span></span></h1>
                     <p>Sin trucos de "productividad extrema". Solo un sistema claro para analizar, decidir y terminar lo
                         que empiezas.</p>
-                    <a href="#oferta" class="btn magnetic-btn">
+                    <a href="#oferta" class="btn">
                         <div class="btn-text-wrapper">
                             <span class="btn-text-original">QUIERO ORGANIZARME</span>
                             <span class="btn-text-clone">QUIERO ORGANIZARME</span>
@@ -659,35 +779,73 @@
                     <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Descarga inmediata en PDF</p>
                 </div>
                 <div class="hero-image">
-                    <!-- Cover Image with Hover Effect -->
+                    <!-- 3D Book Mockup -->
                     <div class="book-container">
-                        <img src="img/libroAS.jpg" alt="Método AS - Portada" class="book-image">
+                        <div class="book">
+                            <img src="img/libroAS.jpg" alt="Método AS - Portada">
+                        </div>
                     </div>
                     <style>
                         .book-container {
-                            perspective: 1000px;
+                            perspective: 1500px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            height: 500px;
-                            /* Adjust based on image aspect ratio */
+                            height: 520px;
+                            z-index: 10;
                         }
 
-                        .book-image {
-                            max-width: 100%;
-                            height: auto;
-                            max-height: 450px;
-                            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-                            /* Initial state */
-                            transform: translateY(0) scale(1);
-                            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+                        .book {
+                            position: relative;
+                            width: 320px;
+                            /* Adjust width/height ratio as needed */
+                            height: 480px;
+                            transform-style: preserve-3d;
+                            transform: rotateY(-25deg) rotateX(5deg);
+                            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
                         }
 
-                        /* Hover Animation - Levitate & Glow */
-                        .book-image:hover {
-                            transform: translateY(-15px) scale(1.02);
-                            filter: drop-shadow(0 40px 50px rgba(217, 4, 41, 0.3));
-                            /* Red glow matching branding */
+                        .book img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 2px 4px 4px 2px;
+                            transform: translateZ(25px);
+                            /* Push front cover forward */
+                            box-shadow: -1px 1px 0px #111, -2px 2px 0px #111, -3px 3px 0px #111, -4px 4px 0px #111, -5px 5px 0px #111;
+                            /* Subtle extrusion */
+                        }
+
+                        /* Removed pseudo-elements ::before and ::after to eliminate "patched" look. 
+                           Going for a clean, high-quality flat look with shadow instead. */
+
+
+                        /* Hover Effect */
+                        .book-container:hover .book {
+                            transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+                            box-shadow: 0 30px 60px rgba(217, 4, 41, 0.3);
+                            /* Red glow */
+                        }
+
+                        /* Check List Styling (Included Section) */
+                        .check-list li {
+                            padding: 1rem;
+                            border-bottom: 1px solid #222;
+                            transition: all 0.3s ease;
+                        }
+
+                        .check-list li:hover {
+                            background: rgba(255, 255, 255, 0.02);
+                            border-left: 3px solid var(--accent-red);
+                            padding-left: 1.5rem;
+                        }
+
+                        .check-list li:last-child {
+                            border-bottom: none;
                         }
                     </style>
                 </div>
@@ -697,16 +855,93 @@
 
     <section class="story">
         <div class="container">
-            <div class="story-content text-center">
-                <h2 class="mb-2">No es magia. Es sentido común aplicado.</h2>
-                <p>Hace unos años, trabajaba muchas horas pero sentía que avanzaba muy poco. Terminaba el día cansado y
-                    con la sensación de tener mil frentes abiertos.</p>
-                <div class="highlight">
-                    <p>"Me di cuenta de que el problema no era cuánto me esforzaba, sino cómo decidía qué hacer y qué
-                        ignorar."</p>
+            <div class="story-content text-left" style="max-width: 800px; margin: 0 auto;">
+
+                <div class="story-switcher"
+                    style="display: grid; place-items: start; height: 3.5rem; margin-bottom: 2rem; position: relative;">
+                    <!-- Text 1 -->
+                    <h2 class="story-text-1"
+                        style="font-size: 1.7rem; grid-area: 1/1; opacity: 1; transition: opacity 0.5s; white-space: nowrap; width: 100%;">
+                        No es un sistema creado desde el éxito.
+                    </h2>
+                    <!-- Text 2 -->
+                    <h2 class="story-text-2 text-red-glow"
+                        style="font-size: 1.7rem; grid-area: 1/1; opacity: 0; transition: opacity 0.5s; white-space: nowrap; width: 100%;">
+                        Es un sistema creado desde la necesidad de reconstruir.
+                    </h2>
                 </div>
-                <p>El <strong>Método AS</strong> es la estructura que uso para salir de ese bucle.
-                    Para dejar de dudar y cerrar tareas con decisión.</p>
+
+                <style>
+                    .story-text-1 {
+                        animation: switch-1 8s infinite;
+                    }
+
+                    .story-text-2 {
+                        animation: switch-2 8s infinite;
+                    }
+
+                    .text-red-glow {
+                        color: var(--accent-red);
+                        text-shadow: 0 0 10px rgba(217, 4, 41, 0.4);
+                    }
+
+                    @keyframes switch-1 {
+
+                        0%,
+                        45% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+
+                        50%,
+                        95% {
+                            opacity: 0;
+                            transform: translateY(-10px);
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    @keyframes switch-2 {
+
+                        0%,
+                        45% {
+                            opacity: 0;
+                            transform: translateY(10px);
+                        }
+
+                        50%,
+                        95% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+
+                        100% {
+                            opacity: 0;
+                            transform: translateY(10px);
+                        }
+                    }
+                </style>
+
+                <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6; margin-top: 1rem;">Después de expandir,
+                    colapsar y perder la salud, entendí algo:</p>
+
+                <div class="story-highlight"
+                    style="border-left: 4px solid var(--accent-red); padding-left: 1.5rem; margin: 2rem 0; background: linear-gradient(90deg, rgba(217, 4, 41, 0.1), transparent);">
+                    <p style="font-size: 1.3rem; color: #fff; font-weight: bold; margin: 0;">No necesitaba más
+                        proyectos.<br>Necesitaba claridad.<br>Necesitaba un método.</p>
+                </div>
+
+                <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6;">El <strong
+                        style="color: var(--accent-red);">Método AS</strong> es la estructura que estoy aplicando hoy
+                    para dejar de hacer 20 cosas a la vez y empezar a avanzar en lo que realmente importa, y sobre todo
+                    a <strong>VALIDAR una idea, un proyecto o un producto antes de escalarlo o de invertir.</strong></p>
+
+                <p style="font-size: 1.1rem; color: #fff; font-weight: bold; margin-top: 1.5rem;">No es perfecto. Es
+                    real. Y funciona cuando lo aplicas.</p>
             </div>
         </div>
     </section>
@@ -745,14 +980,36 @@
                     <div class="ace-center">♠</div>
 
                     <div class="method-point mp-1">
+                        <span class="point-icon">
+                            <!-- Analysis (Magnifying Glass) Icon -->
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="fill: none;">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
                         <span class="mp-title">ANÁLISIS</span>
                         <span class="mp-desc">Entender dónde estás.</span>
                     </div>
                     <div class="method-point mp-2">
+                        <span class="point-icon">
+                            <!-- Strategy (Chess Knight) Icon -->
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="fill: none;">
+                                <path
+                                    d="m8 20 1.2-5.9a1 1 0 0 0-.6-1.1L7 12.3a1 1 0 0 1-.5-1.1l1.5-4.4a1 1 0 0 1 .5-1.2l1.6-.9a1 1 0 0 1 1 .5l1.6 5.4a1 1 0 0 0 1 .5H19v6a1 1 0 0 1-1 1H5.5a.5.5 0 0 1-.5-.5V20Z">
+                                </path>
+                                <circle cx="10" cy="7" r="1.5" fill="currentColor"></circle>
+                            </svg>
+                        </span>
                         <span class="mp-title">ESTRATEGIA</span>
                         <span class="mp-desc">Decidir el camino.</span>
                     </div>
                     <div class="method-point mp-3">
+                        <span class="point-icon">
+                            <!-- Action (Lightning) Icon -->
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </span>
                         <span class="mp-title">ACCIÓN</span>
                         <span class="mp-desc">Ejecutar y terminar.</span>
                     </div>
@@ -766,20 +1023,21 @@
             <h2 class="mb-4">¿Qué incluye?</h2>
             <div style="max-width: 600px; margin: 0 auto; text-align: left;">
                 <ul class="check-list">
-                    <li><strong>El eBook "Método AS" (PDF):</strong> Una guía directa y práctica, sin relleno.</li>
+                    <li><strong>El Reset de 21 Días "<span class="text-red">Método AS</span>" (PDF):</strong> Una guía
+                        directa para emprendedores dispersos.</li>
                     <li><strong>Plantilla de Decisión:</strong> Un esquema simple para destrabarte cuando dudas.
                     </li>
                     <li><strong>Audio "Reset Mental":</strong> 5 minutos para recuperar la calma antes de trabajar.</li>
-                    <li><strong>Actualizaciones futuras</strong> incluidas.</li>
+                    <li><strong>Actualizaciones futuras:</strong>&nbsp;Incluidas de por vida.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="beneficios"
-        style="background-color: #080808; border-top: 1px solid #111; border-bottom: 1px solid #111;">
+        style="background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 80%); border-top: 1px solid #111; border-bottom: 1px solid #111;">
         <div class="container text-center">
-            <h2 class="mb-4">No es solo productividad. <span class="text-red">Es paz mental.</span></h2>
+            <h2 class="mb-4">No es solo productividad. <span class="text-red glowing-text">Es paz mental.</span></h2>
             <div class="benefit-grid benefit-container">
                 <style>
                     .benefit-container {
@@ -790,19 +1048,161 @@
                         margin: 0 auto;
                         text-align: left;
                     }
+
+                    .benefit-item {
+                        padding: 2rem;
+                        background: linear-gradient(145deg, #111, #0a0a0a);
+                        border: 1px solid #222;
+                        border-top: 1px solid #333;
+                        /* Slight top highlight */
+                        border-radius: 12px;
+                        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                        position: relative;
+                        overflow: hidden;
+                    }
+
+                    /* Subtle top red line hint */
+                    .benefit-item::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        background: var(--accent-red);
+                        transform: scaleX(0);
+                        /* Hidden by default */
+                        transform-origin: left;
+                        transition: transform 0.4s ease;
+                    }
+
+                    .benefit-item:hover {
+                        transform: translateY(-8px);
+                        border-color: #333;
+                        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                    }
+
+                    /* Reveal top red line on hover */
+                    .benefit-item:hover::before {
+                        transform: scaleX(1);
+                    }
+
+                    .benefit-item:hover h3 {
+                        color: #fff !important;
+                        /* Keep white for readability, icon does the heavy lifting */
+                    }
+
+                    .benefit-item:hover .benefit-icon {
+                        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+                        /* Standard white glow base */
+                        transform: scale(1.1);
+                    }
+
+                    /* --- Thematic Animations --- */
+
+                    /* 1. Shield (Back to Neutral/Safe) - White/Silver Pulse */
+                    /* Replaced blue to maintain Red/Black/White branding */
+                    @keyframes coolDown {
+                        0% {
+                            stroke: var(--accent-red);
+                            filter: drop-shadow(0 0 5px rgba(217, 4, 41, 0.3));
+                        }
+
+                        50% {
+                            stroke: #ffffff;
+                            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+                        }
+
+                        100% {
+                            stroke: #ffffff;
+                            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+                        }
+                    }
+
+                    .benefit-item:nth-child(2):hover .benefit-icon {
+                        animation: coolDown 0.5s forwards;
+                    }
+
+                    /* 2. Target (Lock On) - Sharp Scale */
+                    @keyframes targetLock {
+                        0% {
+                            transform: scale(1);
+                            stroke: var(--accent-red);
+                            filter: drop-shadow(0 0 5px rgba(217, 4, 41, 0.3));
+                        }
+
+                        40% {
+                            transform: scale(1.4);
+                            stroke: #ffffff;
+                            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+                        }
+
+                        60% {
+                            transform: scale(0.9);
+                            stroke: #ffffff;
+                            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+                        }
+
+                        100% {
+                            transform: scale(1.1);
+                            stroke: #ffffff;
+                            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+                        }
+                    }
+
+                    .benefit-item:nth-child(3):hover .benefit-icon {
+                        animation: targetLock 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+                    }
+
+                    /* 3. Moon (Sleep) - Gentle Sway */
+                    @keyframes sleepSway {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        25% {
+                            transform: rotate(-15deg);
+                        }
+
+                        75% {
+                            transform: rotate(10deg);
+                        }
+
+                        100% {
+                            transform: rotate(0deg);
+                        }
+                    }
+
+                    .benefit-item:nth-child(4):hover .benefit-icon {
+                        animation: sleepSway 3s ease-in-out infinite;
+                        stroke: #ffffff;
+                        /* Explicitly change stroke to white/silver */
+                        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+                    }
                 </style>
                 <div class="benefit-item">
-                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">🛑 Dejar de Apagar Fuegos</h3>
+                    <svg class="benefit-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">Dejar de Apagar Fuegos</h3>
                     <p style="color: #a0a0a0; font-size: 1rem;">Pasarás de reaccionar a lo urgente a trabajar en lo
                         importante. Sin estrés innecesario.</p>
                 </div>
                 <div class="benefit-item">
-                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">🎯 Foco Láser</h3>
+                    <svg class="benefit-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">Foco Láser</h3>
                     <p style="color: #a0a0a0; font-size: 1rem;">Sabrás exactamente qué hacer al sentarte. Cero dudas.
                         Cero procrastinación por bloqueo.</p>
                 </div>
                 <div class="benefit-item">
-                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">🛌 Desconexión Real</h3>
+                    <svg class="benefit-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">Desconexión Real</h3>
                     <p style="color: #a0a0a0; font-size: 1rem;">Cerrarás el portátil sabiendo que cumpliste. Disfruta
                         de tu tiempo libre sin culpa.</p>
                 </div>
@@ -810,33 +1210,413 @@
         </div>
     </section>
 
-    <section id="oferta" style="padding-bottom: 8rem;">
+    <section id="oferta" style="padding-bottom: 5rem;">
         <div class="container text-center">
             <div class="offer-box">
-                <h2 class="mb-2">Empieza hoy mismo.</h2>
-                <!-- <div class="old-price">Antes 29€</div> -->
-                <div class="price">9€</div>
-                <p class="mb-2 text-muted">Pago único. Tuyo para siempre.</p>
+                <h2 class="mb-2" style="font-size: 2.5rem;">Deja de posponer. <span class="text-red">Empieza a
+                        terminar.</span></h2>
 
-                <a href="#" class="btn" style="min-width: 250px;">ACCESO INMEDIATO (9€)</a>
+                <!-- Objection Breaker Block -->
+                <div class="objection-breaker"
+                    style="margin: 2rem 0; text-align: left; background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-red);">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff;">🚫 Esto NO es otro libro de
+                        productividad</h3>
+                    <p style="color: #ccc; margin-bottom: 1rem; font-size: 0.95rem;">No vas a encontrar:</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem; color: #aaa;"><span
+                                style="color: var(--accent-red); margin-right: 0.5rem;">&#10007;</span> 27 técnicas
+                            complicadas</li>
+                        <li style="margin-bottom: 0.5rem; color: #aaa;"><span
+                                style="color: var(--accent-red); margin-right: 0.5rem;">&#10007;</span> Apps nuevas que
+                            te obliguen a cambiar todo</li>
+                        <li style="margin-bottom: 0.5rem; color: #aaa;"><span
+                                style="color: var(--accent-red); margin-right: 0.5rem;">&#10007;</span> Rutinas
+                            imposibles de mantener</li>
+                        <li style="margin-bottom: 0px; color: #aaa;"><span
+                                style="color: var(--accent-red); margin-right: 0.5rem;">&#10007;</span> Teoría infinita
+                            sin aplicación real</li>
+                    </ul>
+                    <p style="color: #fff; font-weight: bold; margin-bottom: 0.5rem;">El Método AS es diferente.</p>
+                    <p style="color: #ccc; font-size: 0.95rem; line-height: 1.5;">No intenta organizar tu agenda.
+                        <strong style="color: #fff;">Organiza tus decisiones.</strong><br>
+                        Y cuando reduces la fatiga decisional, ocurre algo poderoso: <strong
+                            style="color: var(--accent-red);">Empiezas a terminar lo que empiezas.</strong>
+                    </p>
+                </div>
+
+                <div class="price-container">
+                    <p class="old-price">Inversión normal: 19€</p>
+                    <div class="current-price-wrapper" style="flex-direction: column; gap: 0rem; margin-top: 0.5rem;">
+                        <span class="price-label"
+                            style="color: var(--accent-red); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">HOY</span>
+                        <span class="price" style="font-size: 5rem; line-height: 1;">9€</span>
+                        <span class="launch-badge" style="margin-top: 0.5rem;">Edición Lanzamiento</span>
+                    </div>
+                </div>
+
+                <div class="urgency-text"
+                    style="color: #ddd; font-size: 0.95rem; margin-bottom: 2rem; margin-top: 1.5rem; font-weight: bold; background: rgba(255, 255, 255, 0.05); padding: 0.8rem; border-radius: 8px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.1); animation: text-breathe 2.5s infinite ease-in-out;">
+                    <span style="color: #fff; margin-right: 0.5rem;">⏳</span> Oferta válida por lanzamiento. El precio
+                    volverá a 19€.
+                </div>
+
+                <style>
+                    @keyframes text-breathe {
+
+                        0%,
+                        100% {
+                            opacity: 0.8;
+                            transform: scale(1);
+                            box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+                        }
+
+                        50% {
+                            opacity: 1;
+                            transform: scale(1.02);
+                            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+                            border-color: rgba(255, 255, 255, 0.3);
+                        }
+                    }
+                </style>
+
+                <ul class="offer-bullets text-left"
+                    style="display: inline-block; text-align: left; margin: 1rem 0 2rem; width: 100%; padding: 0;">
+
+                    <li
+                        style="display: flex; align-items: flex-start; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                        <span
+                            style="color: var(--accent-red); margin-right: 0.8rem; font-weight: bold; font-size: 1.2rem; display: inline-block;">♠️</span>
+                        <span style="font-size: 1rem; color: #ddd; line-height: 1.5;"><strong>El sistema completo en 3
+                                pasos</strong> (Análisis – Sistema – Acción)</span>
+                    </li>
+
+                    <li
+                        style="display: flex; align-items: flex-start; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                        <span
+                            style="color: var(--accent-red); margin-right: 0.8rem; font-weight: bold; font-size: 1.2rem; display: inline-block;">♠️</span>
+                        <span style="font-size: 1rem; color: #ddd; line-height: 1.5;"><strong>Plantilla
+                                estratégica</strong> para tomar decisiones sin bloqueo</span>
+                    </li>
+
+                    <li
+                        style="display: flex; align-items: flex-start; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                        <span
+                            style="color: var(--accent-red); margin-right: 0.8rem; font-weight: bold; font-size: 1.2rem; display: inline-block;">♠️</span>
+                        <span style="font-size: 1rem; color: #ddd; line-height: 1.5;"><strong>Ritual diario de 5
+                                minutos</strong> para ejecutar sin dispersión</span>
+                    </li>
+
+                    <li style="display: flex; align-items: flex-start; margin-bottom: 0px; padding-top: 0.5rem;">
+                        <span
+                            style="color: var(--accent-red); margin-right: 0.8rem; font-weight: bold; font-size: 1.2rem; display: inline-block;">♠️</span>
+                        <span style="font-size: 1rem; color: #ddd; line-height: 1.5;"><strong>Acceso a Comunidad
+                                AS</strong> (Mentalidad y Construcción conjunta)</span>
+                    </li>
+                </ul>
+
+                <p style="font-size: 1rem; color: #ddd; margin-bottom: 2rem; font-style: italic;">"Todo diseñado para
+                    que en 7 días notes un cambio real en tu forma de trabajar."</p>
+
+                <a href="#" class="btn btn-pulse"
+                    style="width: 100%; max-width: 400px; white-space: normal; line-height: 1.2;">👉 QUIERO TERMINAR LO
+                    QUE EMPIEZO</a>
+
+                <p
+                    style="font-size: 0.95rem; margin-top: 1rem; color: #aaa; font-style: italic; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    “No es falta de tiempo. Es exceso de decisiones. Y eso se soluciona.”
+                </p>
 
                 <div class="guarantee">
-                    <strong>Garantía personal</strong><br>
-                    Si el método no te ayuda a ordenarte en 14 días, escríbeme y te devuelvo el dinero.
+                    <strong>Garantía de 7 días "Sin Riesgo"</strong><br>
+                    Prúebalo. Si no sientes que tienes más control y claridad que antes, te devuelvo el 100% de tu
+                    dinero. Sin preguntas. El riesgo es mío.
                 </div>
+
+                <style>
+                    .offer-box {
+                        background: linear-gradient(145deg, #1a1a1a, #050505);
+                        border: 1px solid #333;
+                        padding: 3rem;
+                        border-radius: 16px;
+                        max-width: 700px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        /* Prevent padding from adding to width */
+                        margin: 0 auto;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                        animation: border-pulse 3s infinite;
+                    }
+
+                    @keyframes border-pulse {
+                        0% {
+                            border-color: #333;
+                            box-shadow: 0 0 0 rgba(217, 4, 41, 0);
+                        }
+
+                        50% {
+                            border-color: var(--accent-red);
+                            box-shadow: 0 0 20px rgba(217, 4, 41, 0.3);
+                        }
+
+                        100% {
+                            border-color: #333;
+                            box-shadow: 0 0 0 rgba(217, 4, 41, 0);
+                        }
+                    }
+
+                    .price-container {
+                        margin: 2rem 0;
+                    }
+
+                    .old-price {
+                        text-decoration: line-through;
+                        color: #888;
+                        font-size: 1.2rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .current-price-wrapper {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        flex-wrap: wrap;
+                    }
+
+                    .price {
+                        font-size: 4rem;
+                        font-weight: 800;
+                        line-height: 1;
+                        color: #fff;
+                        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+                    }
+
+                    .launch-badge {
+                        background-color: var(--accent-red);
+                        color: white;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 50px;
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        box-shadow: 0 0 10px rgba(217, 4, 41, 0.5);
+                        animation: float 3s ease-in-out infinite;
+                    }
+
+                    .offer-bullets {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0 auto;
+                    }
+
+                    .offer-bullets li {
+                        font-size: 1.1rem;
+                        margin-bottom: 0.8rem;
+                        color: #ddd;
+                    }
+
+                    .btn-pulse {
+                        font-size: 1.2rem;
+                        padding: 1rem 2rem;
+                        height: auto;
+                        /* Adjust height for multi-line if needed, though single line preferred */
+                        animation: btn-heartbeat 2s infinite;
+                    }
+
+                    @keyframes btn-heartbeat {
+                        0% {
+                            transform: scale(1);
+                            box-shadow: 0 0 0 0 rgba(217, 4, 41, 0.7);
+                        }
+
+                        70% {
+                            transform: scale(1.05);
+                            box-shadow: 0 0 0 15px rgba(217, 4, 41, 0);
+                        }
+
+                        100% {
+                            transform: scale(1);
+                            box-shadow: 0 0 0 0 rgba(217, 4, 41, 0);
+                        }
+                    }
+
+                    .guarantee {
+                        margin-top: 2.5rem;
+                        padding: 1.5rem;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        border-radius: 8px;
+                        color: #ccc;
+                        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+                        font-size: 0.95rem;
+                        position: relative;
+                        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+                        transition: all 0.3s ease;
+                    }
+
+                    .guarantee:hover {
+                        border-color: rgba(255, 255, 255, 0.5);
+                        box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+                    }
+
+                    .guarantee strong {
+                        display: block;
+                        margin-bottom: 0.5rem;
+                        font-size: 1.1rem;
+                        color: #fff;
+                        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    }
+
+                    @media (max-width: 600px) {
+                        .offer-box {
+                            padding: 2rem 1rem;
+                        }
+
+                        h2 {
+                            font-size: 1.8rem !important;
+                        }
+
+                        .price {
+                            font-size: 2.8rem;
+                        }
+
+                        .btn-pulse {
+                            font-size: 0.95rem;
+                            padding: 1rem 0.5rem;
+                            width: 100%;
+                            white-space: normal;
+                        }
+
+                        .offer-bullets li {
+                            font-size: 1rem;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container text-center">
-            <p>© 2026 Andrés Sebastián Rios Ponce. Todos los derechos reservados.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
-                <a href="#">Aviso Legal</a> | <a href="#">Privacidad</a> | <a href="#">Cookies</a>
-            </p>
+    <!-- Footer - Paso 1 Legal -->
+    <footer
+        style="background-color: #050505; border-top: 1px solid #111; padding: 2rem 0 2rem; margin-top: 0; text-align: center; font-size: 0.9rem; color: #666;">
+        <div class="container">
+            <!-- Branded Separator -->
+            <div class="logo mb-4"
+                style="opacity: 0.5; filter: grayscale(100%); margin-bottom: 1.5rem; justify-content: center;">
+                <span class="logo-text">MÉTODO</span>
+                <span class="logo-spade">♠️</span>
+                <span class="logo-text">AS</span>
+            </div>
+
+            <p>&copy; 2026 Método AS. Todos los derechos reservados.</p>
+            <div style="margin-top: 1rem;">
+                <a href="politica-privacidad.html" class="footer-link">Política de Privacidad</a> |
+                <a href="terminos.html" class="footer-link">Términos y Condiciones</a> |
+                <a href="afiliados.html" class="footer-link">Afiliados</a>
+            </div>
         </div>
     </footer>
 
+    <script>
+        // Magnetic Button Effect REMOVED to prevent jitter/bugs
+        /*
+        const magnets = document.querySelectorAll('.magnetic-btn');
+
+        magnets.forEach((magnet) => {
+            magnet.addEventListener('mousemove', (e) => {
+                const position = magnet.getBoundingClientRect();
+                const x = e.pageX - position.left - position.width / 2;
+                const y = e.pageY - position.top - position.height / 2;
+
+                magnet.style.transform = "translate(" + x * 0.3 + "px, " + y * 0.5 + "px) scale(1.02) translateY(-3px)";
+                magnet.children[0].style.transform = "translate(" + x * 0.1 + "px, " + y * 0.1 + "px)";
+            });
+
+            magnet.addEventListener('mouseleave', (e) => {
+                magnet.style.transform = "translate(0px, 0px) scale(1) translateY(0)";
+                magnet.children[0].style.transform = "translate(0px, 0px)";
+            });
+        });
+        */
+
+        // Smooth Scroll for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(5, 5, 5, 0.95)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.8)';
+            } else {
+                header.style.background = 'rgba(5, 5, 5, 0.85)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aceCenter = document.querySelector('.ace-center');
+            const points = document.querySelectorAll('.method-point');
+
+            // Store the original "Spade" (or whatever is in center)
+            const originalContent = aceCenter.innerHTML;
+
+            points.forEach(point => {
+                const iconSvg = point.querySelector('svg');
+                // Ensure smooth transition for the source icon
+                if (iconSvg) {
+                    iconSvg.style.transition = 'opacity 0.1s ease';
+                }
+
+                point.addEventListener('mouseenter', () => {
+                    if (iconSvg) {
+                        // Clone so we don't move the original
+                        const clonedIcon = iconSvg.cloneNode(true);
+
+                        // Style for center display (White, larger)
+                        clonedIcon.style.width = '3.5rem';
+                        clonedIcon.style.height = '3.5rem';
+                        clonedIcon.style.stroke = '#ffffff';
+                        clonedIcon.style.fill = 'none';
+                        clonedIcon.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))';
+                        // Ensure clone is visible
+                        clonedIcon.style.opacity = '1';
+
+                        // Replace center content
+                        aceCenter.innerHTML = '';
+                        aceCenter.appendChild(clonedIcon);
+
+                        // Add a subtle scale effect to container for emphasis
+                        aceCenter.style.transform = 'translate(-50%, -50%) scale(1.1)';
+
+                        // HIDE original icon (Transfer effect)
+                        iconSvg.style.opacity = '0';
+                    }
+                });
+
+                point.addEventListener('mouseleave', () => {
+                    // Restore original Spade
+                    aceCenter.innerHTML = originalContent;
+                    aceCenter.style.transform = 'translate(-50%, -50%) scale(1)';
+
+                    // SHOW original icon
+                    if (iconSvg) {
+                        iconSvg.style.opacity = '1';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

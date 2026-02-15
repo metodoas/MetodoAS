@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Afiliados - Método AS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-red: #D90429;
+            --accent-red-hover: #EF233C;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+
+        .text-red {
+            color: var(--accent-red);
+        }
+
+        .highlight-box {
+            background: linear-gradient(145deg, #111, #0a0a0a);
+            border: 1px solid #222;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-red-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(217, 4, 41, 0.4);
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            background: #0a0a0a;
+            padding: 2rem;
+            border-left: 2px solid var(--accent-red);
+        }
+
+        .back-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al Sitio Principal</a>
+
+        <h1>Monetiza tu audiencia con <br><span class="text-red">Método AS</span></h1>
+        <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 700px;">
+            Ayuda a tus seguidores a organizar su caos mental y genera ingresos recurrentes promocionando un sistema
+            probado, accesible y de alta conversión.
+        </p>
+
+        <div class="benefit-grid">
+            <div class="benefit-item">
+                <h3>🚀 Conversión Explosiva</h3>
+                <p style="color: #ccc;">Al ser un producto "Low Ticket" (9€), la decisión de compra es casi inmediata.
+                    No hay fricción. Tus seguidores compran sin pensarlo dos veces.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>💰 Comisiones del 50%</h3>
+                <p style="color: #ccc;">Llévate la mitad de cada venta. Sin gastos de envío, sin stock, sin soporte al
+                    cliente. Tú traes el tráfico, nosotros hacemos el resto.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>✅ Producto Real</h3>
+                <p style="color: #ccc;">No vendemos humo. El Método AS es un sistema de productividad serio y práctico.
+                    Tu reputación crecerá al recomendar algo que realmente funciona.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h2>¿Cómo funciona?</h2>
+            <p style="color: #ccc; max-width: 600px; margin: 0 auto 2rem auto;">
+                Utilizamos <strong>Hotmart</strong>, la plataforma líder mundial en productos digitales, para asegurar
+                que recibas tus comisiones puntualmente y con total transparencia.
+            </p>
+
+            <ol style="text-align: left; max-width: 500px; margin: 0 auto; color: #ccc;">
+                <li>Regístrate como afiliado en el botón de abajo.</li>
+                <li>Obtén tu enlace único de seguimiento (HotLink).</li>
+                <li>Compártelo en tus redes, email o blog.</li>
+                <li>¡Recibe tu comisión automáticamente con cada venta!</li>
+            </ol>
+
+            <br>
+            <!-- PLACEHOLDER LINK - CAMBIAR POR ENLACE REAL DE HOTMART -->
+            <a href="#" class="btn">Quiero ser Afiliado</a>
+            <p style="font-size: 0.8rem; color: #555; margin-top: 1rem;">*Gestionado de forma segura por Hotmart</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
