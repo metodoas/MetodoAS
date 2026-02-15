@@ -215,12 +215,13 @@
 
         .header-btn:hover {
             background-color: var(--accent-red);
-            color: #fff;
             /* Stronger Neon Glow */
             box-shadow: 0 0 20px rgba(217, 4, 41, 0.6), 0 0 40px rgba(217, 4, 41, 0.3);
             transform: translateY(-2px);
             border-color: #ff3b5c;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            color: #000;
+            /* Text black on red background */
         }
 
         .gift-btn {
@@ -792,11 +793,12 @@
             </div>
             <!-- Header Actions -->
             <div class="header-actions">
-                <a href="#gift-section" class="gift-btn">
+                <a href="#gift-form" class="gift-btn">
                     <span style="font-size: 1.25em;">🎁</span> QUIERO MI REGALO
                 </a>
                 <a href="#offer-box" class="header-btn">
-                    <span style="font-size: 1.25em; margin-right: 0.5rem;">💳</span> QUIERO COMPRAR
+                    <span style="font-size: 1.2em; margin-right: 0.3rem; vertical-align: middle;">�</span> QUIERO
+                    COMPRAR
                 </a>
             </div>
         </div>
@@ -1686,7 +1688,8 @@
                     <p>Pero quiero que te lleves este <strong>Regalo (Roadmap "Alumno 0")</strong>. Solo compartiré
                         valor real y acceso anticipado a novedades. Nada de spam.</p>
                     <p class="gift-spam-text">
-                        👇 <span class="gift-emoji">🎁</span> Deja tu correo, revisa tu Spam y retira tu regalo.
+                        👇👇👇 <span class="gift-emoji">🎁</span> Deja tu correo, revisa tu Spam y retira tu regalo.
+                        <span class="gift-emoji">🎁</span> 👇👇👇
                     </p>
                 </div>
 
@@ -1698,12 +1701,14 @@
                         margin-top: 1rem;
                         font-weight: 600;
                         letter-spacing: 0.5px;
+                        font-style: normal;
+                        /* Ensure no italics */
                     }
 
                     .gift-emoji {
                         font-size: 1.4rem;
                         vertical-align: middle;
-                        margin-right: 0.2rem;
+                        margin: 0 0.3rem;
                         filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
                         animation: pulse-gold 2s infinite ease-in-out;
                         display: inline-block;
@@ -1847,8 +1852,10 @@
                 }
 
                 .gift-input:focus {
-                    border-color: var(--accent-red);
-                    background: rgba(255, 255, 255, 0.1);
+                    border-color: #FFD700;
+                    /* Gold Focus */
+                    background: rgba(255, 215, 0, 0.05);
+                    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
                 }
 
                 .btn-gift {
