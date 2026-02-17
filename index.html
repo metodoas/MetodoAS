@@ -12,13 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #050505;
-            --card-bg: #111111;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --accent-red: #D90429;
-            --accent-red-hover: #EF233C;
-            --border-color: #333333;
+            --bg-color: #0A0A0B;
+            /* Obsidian Black */
+            --card-bg: #131313;
+            --text-main: #F5F5F5;
+            /* Smoke White */
+            --text-muted: #B0B0B0;
+            --accent-red: #950101;
+            /* Deep Crimson */
+            --accent-red-hover: #B30000;
+            --border-color: #4E4E4E;
+            /* Titanium Grey */
             --spacing-unit: 1rem;
             --max-width: 1200px;
         }
@@ -1826,8 +1830,8 @@
                 <style>
                     .gift-spam-text {
                         font-size: 0.95rem;
-                        color: #e6007e;
-                        /* Brain Pink/Magenta */
+                        color: var(--accent-red);
+                        /* Matched to Deep Crimson */
                         margin-top: 1rem;
                         font-weight: 600;
                         letter-spacing: 0.5px;
@@ -1838,7 +1842,7 @@
                         font-size: 1.4rem;
                         vertical-align: middle;
                         margin: 0 0.3rem;
-                        filter: drop-shadow(0 0 5px rgba(230, 0, 126, 0.5));
+                        filter: drop-shadow(0 0 5px rgba(149, 1, 1, 0.5));
                         animation: pulse-brain 2s infinite ease-in-out;
                         display: inline-block;
                     }
@@ -1867,12 +1871,12 @@
             </div>
 
             <style>
-                /* --- GIFT SECTION STYLES (Brain Theme) --- */
+                /* --- GIFT SECTION STYLES (High-Stakes Brain Theme) --- */
                 .gift-section {
                     margin: 4rem auto 0rem;
                     padding: 3rem;
-                    /* Brain Pink Border & Glow */
-                    border: 1px solid rgba(230, 0, 126, 0.3);
+                    /* Crimson Border & Glow */
+                    border: 1px solid rgba(149, 1, 1, 0.3);
                     border-radius: 12px;
                     text-align: center;
                     position: relative;
@@ -1881,18 +1885,18 @@
                     margin-left: auto;
                     margin-right: auto;
                     /* Dark Background */
-                    background: linear-gradient(135deg, #0a0a0a 0%, #1a0510 100%);
-                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(230, 0, 126, 0.05);
+                    background: linear-gradient(135deg, #0A0A0B 0%, #1a0505 100%);
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(149, 1, 1, 0.05);
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
 
                 .gift-section:hover {
-                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 0, 126, 0.15);
-                    border-color: rgba(230, 0, 126, 0.6);
+                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(149, 1, 1, 0.15);
+                    border-color: rgba(149, 1, 1, 0.6);
                 }
 
                 .gift-icon-wrapper {
-                    background: linear-gradient(135deg, #222 0%, #1a0510 100%);
+                    background: linear-gradient(135deg, #111 0%, #1a0505 100%);
                     width: 80px;
                     height: 80px;
                     border-radius: 50%;
@@ -1900,9 +1904,9 @@
                     align-items: center;
                     justify-content: center;
                     margin: 0 auto 1.5rem;
-                    box-shadow: 0 0 20px rgba(230, 0, 126, 0.2);
+                    box-shadow: 0 0 20px rgba(149, 1, 1, 0.2);
                     position: relative;
-                    border: 1px solid #331020;
+                    border: 1px solid #330505;
                 }
 
                 .gift-icon {
