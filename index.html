@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -101,6 +101,13 @@
             position: relative;
             overflow: hidden;
             text-decoration: none;
+            white-space: nowrap;
+            line-height: normal;
+            text-align: center;
+            height: auto;
+            min-height: 3.5rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9em;
         }
 
         .btn:hover {
@@ -793,11 +800,11 @@
             </div>
             <!-- Header Actions -->
             <div class="header-actions">
-                <a href="#gift-form" class="gift-btn">
-                    <span style="font-size: 1.25em;">🎁</span> QUIERO MI REGALO
+                <a href="#gift-section" class="gift-btn">
+                    <span style="font-size: 1.25em;">🧠</span> TEST GRATUITO
                 </a>
                 <a href="#offer-box" class="header-btn">
-                    <span style="font-size: 1.2em; margin-right: 0.3rem; vertical-align: middle;">�</span> QUIERO
+                    <span style="font-size: 1.2em; margin-right: 0.3rem; vertical-align: middle;">💲</span> QUIERO
                     COMPRAR
                 </a>
             </div>
@@ -808,17 +815,19 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Recupera el control de <span class="text-red">tu tiempo<span
-                                class="blinking-cursor">_</span></span></h1>
-                    <p>Sin trucos de "productividad extrema". Solo un sistema claro para analizar, decidir y terminar lo
-                        que empiezas.</p>
-                    <a href="#oferta" class="btn">
+                    <h1>Método AS: Cómo <span class="text-red">Escalar tu Negocio</span> sin Romper <span
+                            class="text-gradient">tu Salud Mental</span></h1>
+                    <p>Tu problema no es falta de tiempo, es <strong>Fatiga de la Corteza Prefrontal</strong>. Descubre
+                        el sistema que usé para reconstruirme después de que 5 negocios exitosos casi me dejaran en una
+                        silla de ruedas.</p>
+                    <a href="#offer-box" class="btn">
                         <div class="btn-text-wrapper">
-                            <span class="btn-text-original">QUIERO ORGANIZARME</span>
-                            <span class="btn-text-clone">QUIERO ORGANIZARME</span>
+                            <span class="btn-text-original">🚀 DESCARGAR MI PLAN DE RESCATE</span>
+                            <span class="btn-text-clone">🚀 DESCARGAR MI PLAN DE RESCATE</span>
                         </div>
                     </a>
-                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Descarga inmediata en PDF</p>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Descarga inmediata: PDF + Mazo Digital
+                        (Miro)</p>
                 </div>
                 <div class="hero-image">
                     <!-- 3D Book Mockup -->
@@ -895,96 +904,94 @@
         </div>
     </section>
 
-    <section class="story">
+    <section id="authority"
+        style="background: radial-gradient(circle at 50% 50%, #111, #050505); padding: 6rem 0; border-top: 1px solid #222; border-bottom: 1px solid #222;">
         <div class="container">
-            <div class="story-content text-left" style="max-width: 800px; margin: 0 auto;">
-
-                <div class="story-switcher"
-                    style="display: grid; place-items: start; height: 3.5rem; margin-bottom: 2rem; position: relative;">
-                    <!-- Text 1 -->
-                    <h2 class="story-text-1"
-                        style="font-size: 1.7rem; grid-area: 1/1; opacity: 1; transition: opacity 0.5s; white-space: nowrap; width: 100%;">
-                        No es un sistema creado desde el éxito.
-                    </h2>
-                    <!-- Text 2 -->
-                    <h2 class="story-text-2 text-red-glow"
-                        style="font-size: 1.7rem; grid-area: 1/1; opacity: 0; transition: opacity 0.5s; white-space: nowrap; width: 100%;">
-                        Es un sistema creado desde la necesidad de reconstruir.
-                    </h2>
-                </div>
-
-                <style>
-                    .story-text-1 {
-                        animation: switch-1 8s infinite;
-                    }
-
-                    .story-text-2 {
-                        animation: switch-2 8s infinite;
-                    }
-
-                    .text-red-glow {
-                        color: var(--accent-red);
-                        text-shadow: 0 0 10px rgba(217, 4, 41, 0.4);
-                    }
-
-                    @keyframes switch-1 {
-
-                        0%,
-                        45% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-
-                        50%,
-                        95% {
-                            opacity: 0;
-                            transform: translateY(-10px);
-                        }
-
-                        100% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-
-                    @keyframes switch-2 {
-
-                        0%,
-                        45% {
-                            opacity: 0;
-                            transform: translateY(10px);
-                        }
-
-                        50%,
-                        95% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-
-                        100% {
-                            opacity: 0;
-                            transform: translateY(10px);
-                        }
-                    }
-                </style>
-
-                <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6; margin-top: 1rem;">Después de expandir,
-                    colapsar y perder la salud, entendí algo:</p>
-
-                <div class="story-highlight"
-                    style="border-left: 4px solid var(--accent-red); padding-left: 1.5rem; margin: 2rem 0; background: linear-gradient(90deg, rgba(217, 4, 41, 0.1), transparent);">
-                    <p style="font-size: 1.3rem; color: #fff; font-weight: bold; margin: 0;">No necesitaba más
-                        proyectos.<br>Necesitaba claridad.<br>Necesitaba un método.</p>
-                </div>
-
-                <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6;">El <strong
-                        style="color: var(--accent-red);">Método AS</strong> es la estructura que estoy aplicando hoy
-                    para dejar de hacer 20 cosas a la vez y empezar a avanzar en lo que realmente importa, y sobre todo
-                    a <strong>VALIDAR una idea, un proyecto o un producto antes de escalarlo o de invertir.</strong></p>
-
-                <p style="font-size: 1.1rem; color: #fff; font-weight: bold; margin-top: 1.5rem;">No es perfecto. Es
-                    real. Y funciona cuando lo aplicas.</p>
+            <div class="text-center mb-4">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">No soy un "Gurú de Productividad".<br><span
+                        class="text-red">Soy un superviviente del caos.</span></h2>
             </div>
+
+            <!-- Story Card Wrapper -->
+            <div class="story-card"
+                style="background: linear-gradient(145deg, #151515, #080808); border: 1px solid #222; border-radius: 16px; padding: 3rem 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); max-width: 900px; margin: 0 auto;">
+
+                <div class="story-timeline"
+                    style="max-width: 800px; margin: 0 auto; position: relative; border-left: 2px solid var(--accent-red); padding-left: 2rem;">
+
+                    <!-- 2017-2023: The Illusion of Success -->
+                    <div class="timeline-item mb-4" style="position: relative;">
+                        <div class="timeline-dot"
+                            style="position: absolute; left: -2.6rem; top: 0.5rem; width: 1rem; height: 1rem; background: var(--accent-red); border-radius: 50%; box-shadow: 0 0 10px var(--accent-red);">
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">2017-2023: El Éxito Tóxico 🚀</h3>
+                        <p style="color: #ccc;">Fundé <strong>Ofertas Web</strong> y fue un éxito. Me expandí a
+                            <strong>Gráfica y Tecnología</strong> y abrí una filial.<br>
+                            Pero me cegó la ambición. Usé el flujo de caja para abrir negocios sin validar: un
+                            <strong>local
+                                gamer que nunca funcionó</strong>, una tienda de ropa que arrastró mis ganancias, y
+                            hasta
+                            compré un "terreno fantasma".<br>
+                            Terminé pidiendo dinero prestado (gota a gota) para tapar agujeros.
+                        </p>
+                    </div>
+
+                    <!-- 2024: The Impact -->
+                    <div class="timeline-item mb-4" style="position: relative;">
+                        <div class="timeline-dot"
+                            style="position: absolute; left: -2.6rem; top: 0.5rem; width: 1rem; height: 1rem; background: #555; border-radius: 50%;">
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">2024: El Muro 💥</h3>
+                        <p style="color: #ccc;">Las malas decisiones financieras y el estrés crónico me pasaron la
+                            factura
+                            final. Perdí ahorros, gané deudas y mi cuerpo empezó a apagarse.<br>
+                            <strong>Tenía "muchos negocios", pero ninguna vida.</strong>
+                        </p>
+                    </div>
+
+                    <!-- 2025: The Stop -->
+                    <div class="timeline-item mb-4" style="position: relative;">
+                        <div class="timeline-dot"
+                            style="position: absolute; left: -2.6rem; top: 0.5rem; width: 1rem; height: 1rem; background: #fff; border-radius: 50%; box-shadow: 0 0 15px #fff;">
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Junio 2025: Guillain-Barré (Parálisis) 🛑</h3>
+                        <p style="color: #ccc;">Para mi cumpleaños 41, la vida me frenó en seco. El síndrome de
+                            <strong>Guillain-Barré</strong> me dejó sin poder caminar.<br>
+                            <strong>Un mes después (Agosto 2025), justo en el 8° aniversario, cerré todas las empresas y
+                                vendí la filial de Ayacucho.</strong><br>
+                            En esa silla, entendí que <strong>si tu negocio depende de tu salud para sobrevivir, no
+                                tienes
+                                una empresa, tienes una condena.</strong><br>
+                            Ahí nació el Método AS.
+                        </p>
+                    </div>
+
+                    <!-- 2026: The Method -->
+                    <div class="timeline-item" style="position: relative;">
+                        <div class="timeline-dot"
+                            style="position: absolute; left: -2.6rem; top: 0.5rem; width: 1rem; height: 1rem; background: var(--accent-red); border-radius: 50%; box-shadow: 0 0 15px var(--accent-red);">
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">2026: El Método AS (Hoy) ⚡</h3>
+                        <p style="color: #ccc;">Hoy, recuperado y operando desde Brasil, te entrego el sistema exacto
+                            que
+                            usé para salir del pozo.<br>
+                            <strong>Escucha mi historia completa en Spotify:</strong>
+                        </p>
+
+                        <div class="social-proof" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://open.spotify.com/show/0m1XrxmGu6pVshPBRqy2uF" target="_blank"
+                                style="display: inline-flex; align-items: center; gap: 0.5rem; color: #1DB954; border: 1px solid #1DB954; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: all 0.3s;">
+                                <span>🎧</span> Escuchar Podcast
+                            </a>
+                            <a href="https://www.instagram.com/reel/DI4u81TP2iH/" target="_blank"
+                                style="display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; border: 1px solid #333; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: all 0.3s;">
+                                <span>📷</span> Entrevista Día del Emprendedor (Julio 2025)
+                            </a>
+                        </div>
+                    </div>
+
+                </div> <!-- End timeline -->
+            </div> <!-- End story-card -->
         </div>
     </section>
 
@@ -1387,21 +1394,21 @@
                 </div>
 
                 <div class="price-container">
-                    <p class="old-price">Inversión normal: 19€</p>
+                    <p class="old-price">Precio Normal: 27€</p>
                     <div class="current-price-wrapper" style="flex-direction: column; gap: 0rem; margin-top: 0.5rem;">
                         <span class="price-label"
-                            style="color: var(--accent-red); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">HOY</span>
+                            style="color: var(--accent-red); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">OFERTA
+                            LANZAMIENTO</span>
                         <a href="#offer-box" class="price-link" style="text-decoration: none;">
-                            <span class="price" style="font-size: 5rem; line-height: 1;">9€</span>
+                            <span class="price" style="font-size: 5rem; line-height: 1;">17€</span>
                         </a>
-                        <span class="launch-badge" style="margin-top: 0.5rem;">Edición Lanzamiento</span>
+                        <span class="launch-badge" style="margin-top: 0.5rem;">+ Mazo Digital Interactivo (Miro)</span>
                     </div>
                 </div>
 
                 <div class="urgency-text"
                     style="color: #ddd; font-size: 0.95rem; margin-bottom: 2rem; margin-top: 1.5rem; font-weight: bold; background: rgba(255, 255, 255, 0.05); padding: 0.8rem; border-radius: 8px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.1); animation: text-breathe 2.5s infinite ease-in-out;">
-                    <span style="color: #fff; margin-right: 0.5rem;">⏳</span> Oferta válida por lanzamiento. El precio
-                    volverá a 19€.
+                    <span style="color: #fff; margin-right: 0.5rem;">⏳</span> El precio subirá a 27€ muy pronto.
                 </div>
 
                 <style>
@@ -1456,8 +1463,8 @@
                     que en 7 días notes un cambio real en tu forma de trabajar."</p>
 
                 <a href="#offer-box" class="btn btn-pulse"
-                    style="width: 100%; max-width: 400px; white-space: normal; line-height: 1.2;">👉 QUIERO TERMINAR LO
-                    QUE EMPIEZO</a>
+                    style="width: 100%; max-width: 400px; white-space: normal; line-height: 1.2;">👉 DESCARGAR MI PLAN
+                    DE RESCATE</a>
 
                 <p
                     style="font-size: 0.95rem; margin-top: 1rem; color: #aaa; font-style: italic; max-width: 500px; margin-left: auto; margin-right: auto;">
@@ -1768,28 +1775,22 @@
             <div class="gift-section" id="gift-section">
                 <div class="gift-icon-wrapper">
                     <svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M20 12v10H4V12" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M2 7h20v5H2z" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M12 22V7" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" stroke-linecap="round"
+                        <path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                 </div>
 
-                <h3 class="gift-title">¿No es tu momento? No te vayas con las manos vacías.</h3>
+                <h3 class="gift-title">¿No estás seguro de tu nivel de Burnout?</h3>
 
                 <div class="gift-content">
-                    <p>Yo también estuve ahí... intentando unir piezas sueltas con IA, investigando por mi cuenta,
-                        entrando en laberintos sin salida.</p>
-                    <p>Fui el <strong>"Alumno 0"</strong>. Creé este método para ordenarme a mí mismo y salir del caos.
-                        Si hoy no puedes unirte a la Comunidad AS, te entiendo perfectamente.</p>
-                    <p>Pero quiero que te lleves este <strong>Regalo (Roadmap "Alumno 0")</strong>. Solo compartiré
-                        valor real y acceso anticipado a novedades. Nada de spam.</p>
+                    <p>Antes de invertir, diagnostícate. He creado un <strong>Test de Fatiga Decisional</strong> para
+                        que midas
+                        exactamente qué tan "quemada" está tu corteza prefrontal.</p>
+                    <p>No es un PDF genérico. Es una evaluación rápida.</p>
                     <p class="gift-spam-text">
-                        👇👇👇 <span class="gift-emoji">🎁</span> Deja tu correo, revisa tu Spam y retira tu regalo.
-                        <span class="gift-emoji">🎁</span> 👇👇👇
+                        Ingresa tu correo abajo y recibe tu <strong>Resultado + Plan de Acción Básico</strong> en 2
+                        minutos.
                     </p>
                 </div>
 
@@ -2089,6 +2090,12 @@
                 <a href="politica-privacidad.html" class="footer-link">Política de Privacidad</a> |
                 <a href="terminos.html" class="footer-link">Términos y Condiciones</a> |
                 <a href="afiliados.html" class="footer-link">Afiliados</a>
+            </div>
+            <div style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.85rem;">
+                <a href="http://digitalmas.pro/" target="_blank"
+                    style="color: #666; text-decoration: none; transition: color 0.3s;">
+                    Sitio web desarrollado por <strong>DigitalMAS</strong>
+                </a>
             </div>
         </div>
     </footer>
