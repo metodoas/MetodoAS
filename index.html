@@ -815,7 +815,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Método AS: Cómo <span class="text-red">Escalar tu Negocio</span> sin Romper <span
+                    <div
+                        style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; display: inline-block; border-left: 2px solid var(--accent-red); padding-left: 1rem;">
+                        Para emprendedores con muchas ideas
+                    </div>
+                    <h1 style="margin-top: 0;">Cómo <span class="text-red">Escalar tu Negocio</span> sin Romper <span
                             class="text-gradient">tu Salud Mental</span></h1>
                     <p>Tu problema no es falta de tiempo, es <strong>Fatiga de la Corteza Prefrontal</strong>. Descubre
                         el sistema que usé para reconstruirme después de que 5 negocios exitosos casi me dejaran en una
@@ -1393,6 +1397,29 @@
                     </p>
                 </div>
 
+                <!-- Specific Results -->
+                <div class="results-list" style="text-align: left; margin: 2rem 0; padding: 0 1rem;">
+                    <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">Lo que vas a lograr:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; color: #ccc; display: flex; align-items: center;">
+                            <span style="color: #4ade80; margin-right: 0.8rem; font-size: 1.2rem;">✓</span>
+                            Más claridad en qué hacer cada día
+                        </li>
+                        <li style="margin-bottom: 0.8rem; color: #ccc; display: flex; align-items: center;">
+                            <span style="color: #4ade80; margin-right: 0.8rem; font-size: 1.2rem;">✓</span>
+                            Menos procrastinación en tareas clave
+                        </li>
+                        <li style="margin-bottom: 0.8rem; color: #ccc; display: flex; align-items: center;">
+                            <span style="color: #4ade80; margin-right: 0.8rem; font-size: 1.2rem;">✓</span>
+                            Cumplir objetivos en menos tiempo
+                        </li>
+                        <li style="margin-bottom: 0px; color: #ccc; display: flex; align-items: center;">
+                            <span style="color: #4ade80; margin-right: 0.8rem; font-size: 1.2rem;">✓</span>
+                            Cerrar ciclos sin culpa
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="price-container">
                     <p class="old-price">Precio Normal: 27€</p>
                     <div class="current-price-wrapper" style="flex-direction: column; gap: 0rem; margin-top: 0.5rem;">
@@ -1775,9 +1802,11 @@
             <div class="gift-section" id="gift-section">
                 <div class="gift-icon-wrapper">
                     <svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round"
-                            stroke-linejoin="round" />
+                        <path
+                            d="M9.5 2C11.433 2 13 3.567 13 5.5V11H12C12 7 9 7 9 7V2H9.5ZM14.5 2C12.567 2 11 3.567 11 5.5V11H12C12 7 15 7 15 7V2H14.5ZM7 8H8V14H7C5.343 14 4 12.657 4 11C4 9.343 5.343 8 7 8ZM17 8H16V14H17C18.657 14 20 12.657 20 11C20 9.343 18.657 8 17 8Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 11V22" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9 22H15" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
 
@@ -1797,25 +1826,24 @@
                 <style>
                     .gift-spam-text {
                         font-size: 0.95rem;
-                        color: #FFD700;
-                        /* Gold */
+                        color: #e6007e;
+                        /* Brain Pink/Magenta */
                         margin-top: 1rem;
                         font-weight: 600;
                         letter-spacing: 0.5px;
                         font-style: normal;
-                        /* Ensure no italics */
                     }
 
                     .gift-emoji {
                         font-size: 1.4rem;
                         vertical-align: middle;
                         margin: 0 0.3rem;
-                        filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
-                        animation: pulse-gold 2s infinite ease-in-out;
+                        filter: drop-shadow(0 0 5px rgba(230, 0, 126, 0.5));
+                        animation: pulse-brain 2s infinite ease-in-out;
                         display: inline-block;
                     }
 
-                    @keyframes pulse-gold {
+                    @keyframes pulse-brain {
 
                         0%,
                         100% {
@@ -1823,7 +1851,7 @@
                         }
 
                         50% {
-                            transform: scale(1.2);
+                            transform: scale(1.1);
                         }
                     }
                 </style>
@@ -1839,12 +1867,12 @@
             </div>
 
             <style>
-                /* --- GIFT SECTION STYLES (Sober & Professional) --- */
+                /* --- GIFT SECTION STYLES (Brain Theme) --- */
                 .gift-section {
                     margin: 4rem auto 0rem;
                     padding: 3rem;
-                    /* Red/Black Border & Glow */
-                    border: 1px solid rgba(217, 4, 41, 0.3);
+                    /* Brain Pink Border & Glow */
+                    border: 1px solid rgba(230, 0, 126, 0.3);
                     border-radius: 12px;
                     text-align: center;
                     position: relative;
@@ -1853,18 +1881,18 @@
                     margin-left: auto;
                     margin-right: auto;
                     /* Dark Background */
-                    background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
-                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 4, 41, 0.05);
+                    background: linear-gradient(135deg, #0a0a0a 0%, #1a0510 100%);
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(230, 0, 126, 0.05);
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
 
                 .gift-section:hover {
-                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(217, 4, 41, 0.15);
-                    border-color: rgba(217, 4, 41, 0.6);
+                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 0, 126, 0.15);
+                    border-color: rgba(230, 0, 126, 0.6);
                 }
 
                 .gift-icon-wrapper {
-                    background: linear-gradient(135deg, #222 0%, #111 100%);
+                    background: linear-gradient(135deg, #222 0%, #1a0510 100%);
                     width: 80px;
                     height: 80px;
                     border-radius: 50%;
@@ -1872,15 +1900,16 @@
                     align-items: center;
                     justify-content: center;
                     margin: 0 auto 1.5rem;
-                    box-shadow: 0 0 20px rgba(217, 4, 41, 0.2);
+                    box-shadow: 0 0 20px rgba(230, 0, 126, 0.2);
                     position: relative;
-                    border: 1px solid #333;
+                    border: 1px solid #331020;
                 }
 
                 .gift-icon {
-                    width: 40px;
-                    height: 40px;
-                    stroke: var(--accent-red);
+                    width: 45px;
+                    height: 45px;
+                    stroke: #e6007e;
+                    /* Brain Pink */
                     stroke-width: 1.5;
                     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
                 }
